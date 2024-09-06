@@ -8,4 +8,5 @@ public class BaseApi {
     static final String DELETE_USER = "api/auth/user";
     static final String POST_CREATE_ORDER = "api/orders";
     static final String GET_RECEIVE_ORDER_USER = "api/orders";
+    static final String GET_INGREDIENTS = "api/ingredients";
 }

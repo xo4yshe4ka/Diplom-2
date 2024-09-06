@@ -9,7 +9,7 @@ import static org.example.RestClient.getBaseSpec;
 
 public class UserClient {
 
-    @Step
+    @Step("Send POST request to api/auth/register to create user")
     public ValidatableResponse createUser(User user) {
         return given()
                 .spec(getBaseSpec())
@@ -19,7 +19,7 @@ public class UserClient {
                 .then();
     }
 
-    @Step
+    @Step("Send DELETE request to api/auth/user for deletion user")
     public ValidatableResponse deleteUser(String accessToken) {
         return given()
                 .spec(getBaseSpec(accessToken))
@@ -28,7 +28,7 @@ public class UserClient {
                 .then();
     }
 
-    @Step
+    @Step("Send POST request to api/auth/login to login user")
     public ValidatableResponse loginUser(UserCredentials userCredentials) {
         return given()
                 .spec(getBaseSpec())
@@ -38,7 +38,7 @@ public class UserClient {
                 .then();
     }
 
-    @Step
+    @Step("Send PATCH request to api/auth/user to change data of registered user")
     public ValidatableResponse changeUserData(String accessToken, User user) {
         return given()
                 .spec(getBaseSpec(accessToken))
@@ -48,7 +48,7 @@ public class UserClient {
                 .then();
     }
 
-    @Step
+    @Step("Send PATCH request to api/auth/user to change data of unregistered user")
     public ValidatableResponse changeUserData(User user) {
         return given()
                 .spec(getBaseSpec())
